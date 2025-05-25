@@ -81,7 +81,9 @@ class PostAdminService
         $this->deleteImage($post->image);
         $this->deleteImage($post->image_min);
 
-        foreach ($post->body as $lang => $content) {
+
+        foreach ($post->getTranslations('body') as $lang => $content) {
+
 
             $domPost = new DOMDocument();
             $domPost->loadHTML('<meta http-equiv="Content-Type" content="charset=utf-8" />' . $content);
