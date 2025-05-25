@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\PostAdminFormRequest;
 use App\Models\Language;
 use App\Services\Admin\PostAdminService;
+use App\Services\Admin\SitemapGeneratorService;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -16,10 +17,12 @@ class PostAdminController extends Controller
 {
 
     public $postService;
+    public $sitemapService;
 
-    public function __construct(PostAdminService $postService)
+    public function __construct(PostAdminService $postService, SitemapGeneratorService $sitemapService)
     {
         $this->postService = $postService;
+        $this->sitemapService = $sitemapService;
     }
 
     public function index()
@@ -49,6 +52,7 @@ class PostAdminController extends Controller
 
 
         if ($post) {
+            $this->sitemapService->generate();
             alert(__('admin.success.create'));
         } else {
             alert(__('admin.errors.error'), 'danger');
@@ -91,6 +95,7 @@ class PostAdminController extends Controller
         $res = $this->postService->updatePost($id, $request);
 
         if ($res) {
+            $this->sitemapService->generate();
             alert(__('admin.success.updated'));
         } else {
             alert(__('admin.errors.error'), 'danger');

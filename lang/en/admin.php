@@ -103,6 +103,10 @@ return [
         'languages-edit' => 'Edit language',
 
         'slider' => 'slider',
+
+        'sitemap' => 'Sitemap',
+        'sitemap-create' => 'sitemap language',
+        'sitemap-show' => 'Show sitemap',
     ],
 
     'success' => [

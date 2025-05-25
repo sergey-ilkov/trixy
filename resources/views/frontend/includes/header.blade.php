@@ -10,7 +10,7 @@
 
             {{-- ? languages  start--}}
            
-            {{-- <div style="display: flex; gap:20px; padding:0 20px;">
+            <div style="display: flex; gap:20px; padding:0 20px;">
 
                 @foreach ( \App\Helpers\Langs::LOCALES as $locale)
 
@@ -31,7 +31,7 @@
                   
                 @endforeach
            
-            </div> --}}
+            </div>
             {{-- ? languages end --}}
 
             <nav id="nav-menu" class="nav-menu">

@@ -17,8 +17,12 @@ Artisan::command('logs:clear', function () {
 })->describe('Clear log files');
 
 Schedule::command('logs:clear')->monthly();
+
 // Schedule::command('logs:clear')->everyMinute();
 
 // Schedule::command('callstream:cron')->hourly();
 // Schedule::command('callstream:cron')->everyMinute();
 // Schedule::command('callstream:cron')->everyTwoMinutes();
+
+// ?sitemap
+// Schedule::command('sitemap:generate')->daily();

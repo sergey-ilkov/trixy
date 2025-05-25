@@ -9,6 +9,10 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ServiceController;
 use App\Http\Controllers\Frontend\TestController;
 use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
+
+
 
 
 
@@ -55,4 +59,4 @@ Route::middleware('auth:web')->group(function () {
 
 
 // ? test
-// Route::get('/test', [TestController::class, 'index'])->name('test');
+Route::get('/test', [TestController::class, 'index'])->name('test');

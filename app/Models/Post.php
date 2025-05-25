@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
+use Spatie\Sitemap\Contracts\Sitemapable;
+use Spatie\Sitemap\Tags\Url;
 use Spatie\Translatable\HasTranslations;
 
-class Post extends Model
+class Post extends Model implements Sitemapable
 {
     use HasTranslations;
 
@@ -36,4 +39,14 @@ class Post extends Model
         'published' => 'boolean',
         'slider' => 'boolean',
     ];
+
+    public function toSitemapTag(): Url | string | array
+    {
+        // Simple return:
+        // return route('blog.post.show', $this);
+
+        // Return with fine-grained control:
+        return Url::create(route('article', $this->slug))
+            ->setLastModificationDate(Carbon::create($this->updated_at));
+    }
 }

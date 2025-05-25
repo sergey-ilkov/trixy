@@ -1,16 +1,19 @@
 <?php
 
-use App\Http\Controllers\Admin\ActionAdminController;
-use App\Http\Controllers\Admin\Auth\AuthAdminController;
-use App\Http\Controllers\Admin\Auth\UserAdminController;
-use App\Http\Controllers\Admin\HomeAdminController;
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\SuperAdminMiddleware;
+use App\Http\Controllers\Admin\SitemapController;
 use App\Http\Controllers\Admin\LanguageController;
+use App\Http\Controllers\Admin\HomeAdminController;
 use App\Http\Controllers\Admin\PostAdminController;
+use App\Http\Controllers\Admin\ActionAdminController;
 use App\Http\Controllers\Admin\ReviewAdminController;
 use App\Http\Controllers\Admin\ServiceAdminController;
+use App\Http\Controllers\Admin\Auth\AuthAdminController;
+use App\Http\Controllers\Admin\Auth\UserAdminController;
 use App\Http\Controllers\Admin\ServiceCategoryAdminController;
-use App\Http\Middleware\SuperAdminMiddleware;
-use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -62,6 +65,11 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/services/{id}/edit', [ServiceAdminController::class, 'edit'])->name('admin.services.edit');
     Route::put('/services/{id}', [ServiceAdminController::class, 'update'])->name('admin.services.update');
     // Route::delete('/services/{id}', [ServiceAdminController::class, 'destroy'])->name('admin.services.destroy');
+
+
+    // ? sitemap
+    Route::get('/sitemap', [SitemapController::class, 'index'])->name('admin.sitemap.index');
+    Route::get('/sitemap/create', [SitemapController::class, 'createSitemap'])->name('admin.sitemap.create');
 });
 
 

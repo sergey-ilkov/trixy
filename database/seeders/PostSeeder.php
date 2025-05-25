@@ -27,8 +27,8 @@ class PostSeeder extends Seeder
                     'ru' => $num . ' сервис',
                 ],
                 'slug' => [
-                    'uk' => 'servis-ukrayini',
-                    'ru' => 'servis-ukrainy',
+                    'uk' => 'servis-ukrayini-' . $num . '-uk',
+                    'ru' => 'servis-ukrainy-' . $num . '-ru',
                 ],
 
                 'description' => [

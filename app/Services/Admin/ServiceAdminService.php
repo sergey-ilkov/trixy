@@ -104,6 +104,7 @@ class ServiceAdminService
         $data = [
             'name' => $request->name,
             'icon' => $pathImage,
+            'alt_image' => $request->alt_image,
             'interset' => $request->interset,
             'term' => $request->term,
             'amount' => $request->amount,

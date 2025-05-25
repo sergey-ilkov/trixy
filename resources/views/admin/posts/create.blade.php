@@ -92,6 +92,8 @@
                                 <x-admin.label class="label-group">
                                     {{ __('admin.label.slug') }}
 
+                                    ({{ $language->code }})
+                                    
                                     <span>
                                         <span>{{ __('admin.label.slug-url') }}</span>
                                         <span>{{ __('https://slugify.online') }}</span>

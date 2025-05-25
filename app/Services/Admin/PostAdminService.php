@@ -217,6 +217,7 @@ class PostAdminService
             'views' => $request->views,
             'image' => $pathImage,
             'image_min' => $pathImageMin,
+            'alt_image' => $request->alt_image,
             'body' => $content_body,
             'published' => $request->has('published') ? true : false,
             'slider' => $request->has('slider') ? true : false,
