@@ -5,8 +5,8 @@ namespace App\Helpers;
 class Langs
 {
 
-    const LOCALES = ['uk', 'ru'];
-    // const LOCALES = ['uk'];
+    // const LOCALES = ['uk', 'ru'];
+    const LOCALES = ['uk'];
 
     public static function getLocale(): string
     {
