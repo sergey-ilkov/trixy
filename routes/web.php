@@ -55,4 +55,4 @@ Route::middleware('auth:web')->group(function () {
 
 
 // ? test
-Route::get('/test', [TestController::class, 'index'])->name('test');
+// Route::get('/test', [TestController::class, 'index'])->name('test');
