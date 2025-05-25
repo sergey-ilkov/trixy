@@ -16,12 +16,12 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
 
-            // LanguageSeeder::class,
+            LanguageSeeder::class,
             // ReviewSeed::class,
 
             // ActionSeeder::class,
             // PostSeeder::class,
-            // ServiceCategorySeeder::class,
+            ServiceCategorySeeder::class,
             // ServiceSeeder::class,
 
             // UserSeed::class,
