@@ -26,14 +26,6 @@ Route::prefix(Langs::getLocale())->middleware('langs')->group(function () {
     Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 
-    // Route::middleware(['throttle:user-auth'])->group(function () {
-
-    //     // ? forgot password
-    //     Route::get('/forgot-password', [ForgotPasswordController::class, 'showForgotPasswordForm'])->name('forgot.password');
-    //     Route::post('/forgot-password', [ForgotPasswordController::class, 'submitForgotPasswordForm'])->name('forgot.password.post');
-    //     Route::get('/reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password');
-    //     Route::post('/reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
-    // });
 
     // ? forgot password 
     // Route::get('/forgot-password', [ForgotPasswordController::class, 'showForgotPasswordForm'])->name('forgot.password');
@@ -64,4 +56,3 @@ Route::middleware('auth:web')->group(function () {
 
 // ? test
 Route::get('/test', [TestController::class, 'index'])->name('test');
-// Route::get('/test/{token}', [TestController::class, 'show'])->name('test.reset');
