@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             LanguageSeeder::class,
             // ReviewSeed::class,
 
-            // ActionSeeder::class,
+            ActionSeeder::class,
             // PostSeeder::class,
             ServiceCategorySeeder::class,
             // ServiceSeeder::class,
