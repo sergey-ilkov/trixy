@@ -15,18 +15,18 @@ class DatabaseSeeder extends Seeder
 
 
         $this->call([
-            LanguageSeeder::class,
-            ReviewSeed::class,
+            // LanguageSeeder::class,
+            // ReviewSeed::class,
 
-            ActionSeeder::class,
-            PostSeeder::class,
-            ServiceCategorySeeder::class,
-            ServiceSeeder::class,
+            // ActionSeeder::class,
+            // PostSeeder::class,
+            // ServiceCategorySeeder::class,
+            // ServiceSeeder::class,
 
-            UserSeed::class,
+            // UserSeed::class,
 
-            HistorySeeder::class,
-            AdminSeeder::class,
+            // HistorySeeder::class,
+            // AdminSeeder::class,
 
         ]);
     }
