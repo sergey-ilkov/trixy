@@ -137,7 +137,7 @@
                         <div class="example-service__col">
                             <div class="example-service-chart__box">
                                 <span class="example-service-chart">9.5</span>
-                                <span class="example-service-chart__name">F-рейтинг</span>
+                                <span class="example-service-chart__name">T-рейтинг</span>
                             </div>
 
                         </div>
@@ -175,7 +175,7 @@
                 </div>
                 <div class="example-content">
                     <h2 class="example__title title-h2">
-                        <span class="accent-color"> F-Рейтинг</span>
+                        <span class="accent-color"> T-Рейтинг</span>
                         <br>
                         кредитних сервісів
                     </h2>
@@ -201,7 +201,7 @@
             <div class="example example-2">
                 <div class="example-content">
                     <h2 class="example__title title-h2">
-                        <span class="accent-color"> F-Рейтинг</span> постійно оновлюється ШІ на основі
+                        <span class="accent-color"> T-Рейтинг</span> постійно оновлюється ШІ на основі
                     </h2>
                 </div>
 
@@ -209,7 +209,7 @@
 
                     <div class="example-scheme__box">
                         <span class="example-scheme__box-rating">9.5</span>
-                        <span class="example-scheme__box__name">F-рейтинг</span>
+                        <span class="example-scheme__box__name">T-рейтинг</span>
                     </div>
 
                     <div class="example-scheme__items">
@@ -318,7 +318,7 @@
                         <div class="example-service__col">
                             <div class="example-service-chart__box">
                                 <span class="example-service-chart">9.5</span>
-                                <span class="example-service-chart__name">F-схвалення</span>
+                                <span class="example-service-chart__name">T-схвалення</span>
                             </div>
 
                         </div>
@@ -357,7 +357,7 @@
 
                 <div class="example-content">
                     <h2 class="example__title title-h2">
-                        <span class="accent-color"> F-схвалення</span>
+                        <span class="accent-color"> T-схвалення</span>
                         <br>
                         Кредити
                         <span class="accent-color">без відмов</span>
@@ -369,7 +369,7 @@
                             <br>
                             де найчастіше погоджують заявки
                             <br>
-                            (на основі рейтингу F-схвалення)
+                            (на основі рейтингу T-схвалення)
                         </p>
                     </div>
                     <a class="example__link btn-1" href="{{ route('services') }}">Подивитись рейтинг</a>
@@ -458,7 +458,7 @@
                         <div class="example-service__col">
                             <div class="example-service-chart__box">
                                 <span class="example-service-chart">9.5</span>
-                                <span class="example-service-chart__name">F-вартість</span>
+                                <span class="example-service-chart__name">T-вартість</span>
                             </div>
 
                         </div>
@@ -497,7 +497,7 @@
 
                 <div class="example-content">
                     <h2 class="example__title title-h2">
-                        <span class="accent-color"> F-Вартість</span>
+                        <span class="accent-color"> T-Вартість</span>
                         <br>
                         Кредити
                         <span class="accent-color">без відсотків</span>
@@ -509,7 +509,7 @@
                             <br>
                             із мінімальною відсотковою ставкою
                             <br>
-                            (на основі рейтингу F-вартість)
+                            (на основі рейтингу T-вартість)
                         </p>
                     </div>
                     <a class="example__link btn-1" href="{{ route('services') }}">Подивитись рейтинг</a>
@@ -1131,7 +1131,7 @@
         <div class="why__items">
             <div class="why__item bg-grd-1">
                 <span class="why__item-icon"></span>
-                <h3 class="why__item-title">Рейтинг сервісів F-рейтинг</h3>
+                <h3 class="why__item-title">Рейтинг сервісів T-рейтинг</h3>
                 <p class="why__item-text">
                     Ми постійно аналізуємо вартість, рівень погодження та зручність сервісів які пропонуємо вам
                 </p>

@@ -31,7 +31,7 @@
         <div class="about-hero__items">
             <div class="about-hero__item">
                 <h1 class="about-hero__title">
-                    <span class="accent-color">Flexy –</span>
+                    <span class="accent-color">Trixy –</span>
                     РОБИМО КРЕДИТИ ДЕШЕВШИМИ ТА ДОСТУПНІШИМИ
                 </h1>
             </div>
@@ -43,7 +43,7 @@
 
                 <div class="about-hero-content">
                     <p class="about-hero__text">
-                        Flexy – команда ентузіастів, яка на власному досвіді знає як важко буває отримати кредит саме тоді, коли
+                        Trixy – команда ентузіастів, яка на власному досвіді знає як важко буває отримати кредит саме тоді, коли
                         це
                         найбільш потрібно.
                     </p>

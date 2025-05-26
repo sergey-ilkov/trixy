@@ -1,6 +1,6 @@
 <section class="reviews">
     <div class="container">
-        <h2 class="reviews__title title-h2">Чому люди довіряють FLEXY</h2>
+        <h2 class="reviews__title title-h2">Чому люди довіряють TRIXY</h2>
 
         @if ($reviews->isEmpty())
 
