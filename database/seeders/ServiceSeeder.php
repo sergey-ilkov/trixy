@@ -53,7 +53,7 @@ class ServiceSeeder extends Seeder
                     // 'ru' => 'Киевстар',
                 ],
 
-                'email' => fake()->email(),
+                'email' => 'test' . $num . '@test.com',
 
 
                 'address' => [
