@@ -17,12 +17,12 @@ class DatabaseSeeder extends Seeder
         $this->call([
 
             LanguageSeeder::class,
-            ReviewSeed::class,
+            // ReviewSeed::class,
 
             ActionSeeder::class,
-            PostSeeder::class,
+            // PostSeeder::class,
             ServiceCategorySeeder::class,
-            ServiceSeeder::class,
+            // ServiceSeeder::class,
 
             // UserSeed::class,
 
