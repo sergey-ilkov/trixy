@@ -2683,6 +2683,8 @@ class ForgotPasswordModal {
         }
         // console.log('this.objSendData: ', this.objSendData);
 
+
+
     }
 
 

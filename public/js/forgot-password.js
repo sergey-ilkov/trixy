@@ -35,6 +35,8 @@ class ResetPassword {
 
         this.inputPassword = this.form.querySelector('#password-forgot');
 
+        this.token = document.querySelector('[name="csrf-token"]');
+
 
 
         this.value = null;
@@ -135,12 +137,13 @@ class ResetPassword {
         this.objSendData[this.inputPassword.name] = this.inputPassword.value;
 
         this.objSendData = {};
-        this.inputs.forEach(input => {
-            this.objSendData[input.name] = input.value;
-        });
-        // if (this.token) {
-        //     this.objSendData['_token'] = this.token.getAttribute('content');
-        // }
+
+        this.objSendData[this.inputPassword.name] = this.inputPassword.value;
+
+
+        if (this.token) {
+            this.objSendData['_token'] = this.token.getAttribute('content');
+        }
 
     }
 

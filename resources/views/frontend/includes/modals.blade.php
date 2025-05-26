@@ -111,7 +111,6 @@
 
             <form id="forgot-password-form" class="forgot-form modal-form" method="POST" action="{{ route('forgot.password.post') }}">
               
-                @csrf
                
                 <div class="modal-form-box">
                     <div class="modal-form-group">
