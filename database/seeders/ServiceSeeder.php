@@ -61,7 +61,7 @@ class ServiceSeeder extends Seeder
                     // 'ru' => 'Киев, ул. Днепровская набережная, 19-б',
                 ],
 
-                'phone' => fake()->phoneNumber(),
+                'phone' => '+38095' . rand(1000000, 10000000),
                 'published' => rand(0, 1) == 1,
             ]);
 
