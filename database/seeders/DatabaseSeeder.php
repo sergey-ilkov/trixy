@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
             // UserSeed::class,
 
             // HistorySeeder::class,
-            AdminSeeder::class,
+            // AdminSeeder::class,
 
         ]);
     }
