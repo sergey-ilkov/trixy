@@ -43,7 +43,7 @@ class ServiceSeeder extends Seeder
 
 
                 'license' => [
-                    'uk' => 'Свідотцтво №' . fake()->randomNumber(9),
+                    'uk' => 'Свідотцтво №' . rand(10000, 100000),
                     // 'ru' => 'Свидетельство №' . fake()->randomNumber(9),
                 ],
 
