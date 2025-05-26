@@ -30,9 +30,9 @@
 
             <form id="reset-password-form" class="forgot-form modal-form" method="POST" action="{{ route('reset.password.post') }}">
               
-                @csrf
+       
 
-                <input type="hidden" name="token_forgot" value="{{ $token }}">
+                <input id="token-forgot" type="hidden" name="token_forgot" value="{{ $token }}">
     
                   
                 

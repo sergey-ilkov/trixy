@@ -191,13 +191,16 @@ class ForgotPasswordController extends Controller
         $user = User::where('email', $email)->first();
 
         if (!$user) {
-            $error = [
+
+            DB::table('password_reset_tokens')->where(['email' => $email])->delete();
+
+            $errors = [
                 "status" => "error",
                 'errors' => [
                     'email' => __('messages.error_forgot'),
                 ]
             ];
-            return response()->json($error);
+            return response()->json($errors);
         }
 
 
