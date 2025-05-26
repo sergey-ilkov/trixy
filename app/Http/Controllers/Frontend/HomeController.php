@@ -21,8 +21,6 @@ class HomeController extends Controller
 
         $posts = Post::where('published', 1)->where('slider', 1)->get();
 
-        // dd($posts);
-
         $page = 'home';
 
         return view('frontend.home.index', compact('page', 'reviews', 'posts'));

@@ -14,16 +14,18 @@ class ReviewSeed extends Seeder
     public function run(): void
     {
         //
+        $num = 1;
         for ($i = 0; $i < 6; $i++) {
 
             $data = [
-                'name' => fake()->firstName(),
-                'surname' => fake()->lastName(),
+                'name' => 'Євген',
+                'surname' => $num,
                 'rating' => rand(1, 10),
-                'text' => fake()->text(rand(150, 300)),
+                'text' => 'Супер сервіс. Раджу знайомим.',
             ];
 
             Review::create($data);
+            $num += 1;
         }
     }
 }

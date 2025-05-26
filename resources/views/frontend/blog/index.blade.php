@@ -238,7 +238,7 @@
                             {{-- <div class="top-services-chart" data-percent="{{ $service->rating }}"></div> --}}
                         </div>
                         <div class="top-services__col">
-                            <a class="top-services__item-link btn-1" href="#">Детальніше</a>
+                            <a class="top-services__item-link btn-1" href="{{ route('services') }}">Детальніше</a>
                         </div>
                     </div>
 

@@ -27,7 +27,7 @@ class ServiceSeeder extends Seeder
 
                 'name' => [
                     'uk' => $num . ' Сервіс України',
-                    'ru' => $num . ' Сервис Украины',
+                    // 'ru' => $num . ' Сервис Украины',
                 ],
 
                 'icon' => 'images/services/credit-kasa.png',
@@ -44,13 +44,13 @@ class ServiceSeeder extends Seeder
 
                 'license' => [
                     'uk' => 'Свідотцтво №' . fake()->randomNumber(9),
-                    'ru' => 'Свидетельство №' . fake()->randomNumber(9),
+                    // 'ru' => 'Свидетельство №' . fake()->randomNumber(9),
                 ],
 
 
                 'comp_name' => [
                     'uk' => 'Київстар',
-                    'ru' => 'Киевстар',
+                    // 'ru' => 'Киевстар',
                 ],
 
                 'email' => fake()->email(),
@@ -58,7 +58,7 @@ class ServiceSeeder extends Seeder
 
                 'address' => [
                     'uk' => 'Київ, вул. Дніпровська набережна, 19-б',
-                    'ru' => 'Киев, ул. Днепровская набережная, 19-б',
+                    // 'ru' => 'Киев, ул. Днепровская набережная, 19-б',
                 ],
 
                 'phone' => fake()->phoneNumber(),

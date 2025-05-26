@@ -112,7 +112,7 @@ function initSliderServices() {
             },
 
             pagination: {
-                el: '.swiper-pagination',
+                el: '.swiper-pagination-services',
                 type: 'bullets',
                 clickable: true,
             },
@@ -143,9 +143,39 @@ function initSliderReviews() {
             slidesPerView: 1,
 
             pagination: {
-                el: '.swiper-pagination',
+                el: '.swiper-pagination-reviews',
                 type: 'bullets',
                 clickable: true,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                800: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                1100: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                }
+            }
+        })
+    }
+}
+
+function initSliderPosts() {
+
+    const divPostssSlider = document.querySelector('#slider-posts');
+    if (divPostssSlider) {
+        new Swiper(divPostssSlider, {
+            speed: 800,
+            slidesPerView: 1,
+            // Navigation arrows
+            navigation: {
+                nextEl: '.slider-posts-btn-next',
+                prevEl: '.slider-posts-btn-prev',
             },
             breakpoints: {
                 320: {
@@ -322,11 +352,17 @@ window.addEventListener('DOMContentLoaded', () => {
         initSliderReviews();
 
         initAccordionFaq();
+
+        initSliderPosts();
     }
 
     if (pageServices) {
 
         initCreditServices();
+
+        initAccordionFaq();
+
+        initSliderPosts();
     }
 
     if (pageAbout) {
@@ -2785,3 +2821,5 @@ const btnForgotPassword = document.querySelector('#modal-btn-forgot');
 if (forgotPasswordModal && btnForgotPassword && divModalSignIn) {
     new ForgotPasswordModal(forgotPasswordModal, btnForgotPassword, divModalSignIn);
 }
+
+

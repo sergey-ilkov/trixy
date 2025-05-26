@@ -32,13 +32,19 @@
 
                         <div class="reviews__item-rating">
 
-                            @for ($i = 0; $i < 5; $i++) @if ($i < $review->rating)
-                                <span class="reviews__item-star active"></span>
-                                @else
-                                <span class="reviews__item-star"></span>
-                                @endif
+                            @for ($i = 0; $i < 5; $i++) 
 
-                                @endfor
+                            @if ($i < $review->rating)
+                                
+                            <span class="reviews__item-star active"></span>
+                                
+                            @else
+                                
+                            <span class="reviews__item-star"></span>
+                                
+                            @endif
+                                
+                            @endfor
 
 
 
@@ -56,7 +62,7 @@
 
             </div>
 
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination swiper-pagination-reviews"></div>
         </div>
 
         @endif
