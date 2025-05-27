@@ -5153,8 +5153,8 @@ form .modal-form-text {
     font-size: 18px;
     line-height: 122%;
     letter-spacing: 0.06em;
-    /* color: var(--color-grey); */
-    color: var(--color-white);
+    color: var(--color-grey);
+    /* color: var(--color-white); */
     margin-bottom: 20px;
 }
 .contacts-form {

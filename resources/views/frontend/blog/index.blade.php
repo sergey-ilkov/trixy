@@ -1,8 +1,15 @@
 @extends('frontend.layouts.base')
 
 
+@once
 
+@push('css')
 
+<link rel="preload" as="image" href="{{ asset('images/blog/hero.jpg') }}" />
+
+@endpush
+
+@endonce
 
 @section('content')
 
