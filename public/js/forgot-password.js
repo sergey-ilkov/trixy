@@ -38,8 +38,6 @@ class ResetPassword {
         this.token = document.querySelector('[name="csrf-token"]');
         this.tokenForgot = document.querySelector('#token-forgot');
 
-
-
         this.value = null;
 
         this.flagSend = false;
@@ -83,9 +81,6 @@ class ResetPassword {
             this.currentFormGroup.classList.remove('valid');
         }
 
-
-
-
         this.btnShowPass.addEventListener('click', () => {
 
             this.btnShowPass.classList.toggle('show');
@@ -103,9 +98,7 @@ class ResetPassword {
         this.btnSend.addEventListener('click', () => {
             this.validation();
 
-
             if (this.flagSend) {
-                // console.log('input valid... send');
                 this.defaultForm();
                 this.preloader.style.display = 'flex';
                 this.getFormData();
@@ -128,26 +121,20 @@ class ResetPassword {
             this.currentFormGroup.classList.remove('valid');
             this.currentFormGroup.classList.add('error');
         }
-
-
     }
 
-
     getFormData() {
-
 
         this.objSendData = {};
 
         this.objSendData[this.inputPassword.name] = this.inputPassword.value;
         this.objSendData[this.tokenForgot.name] = this.tokenForgot.value;
 
-
         if (this.token) {
             this.objSendData['_token'] = this.token.getAttribute('content');
         }
 
     }
-
 
     resSuccess() {
         if (this.objData['forgot']) {
@@ -160,11 +147,6 @@ class ResetPassword {
 
     resError() {
 
-        // console.log('resError()');
-
-
-
-
         if (this.objData['status'] == 429 || this.objData['status'] == 419 || this.objData['status'] == 422) {
 
             this.preloader.style.display = 'none';
@@ -176,27 +158,21 @@ class ResetPassword {
             return;
         }
 
-
         this.errors = this.objData['errors'];
 
         if (this.errors) {
             this.html = '';
             for (const key in this.errors) {
                 this.html += `<span>${this.errors[key]}</span>`;
-
-                // console.log(this.errors[key]);
-
             }
 
             this.messageError.innerHTML = this.html;
             this.preloader.style.display = 'none';
             this.messageError.style.display = 'flex';
 
-
             this.currentFormGroup = this.inputPassword.parentNode;
             this.currentFormGroup.classList.remove('valid');
             this.currentFormGroup.classList.add('error');
-
 
         }
 
@@ -210,7 +186,6 @@ class ResetPassword {
             this.flagSend = false;
 
             this.objData = null;
-
 
             const options = {
                 method: 'POST',
@@ -265,7 +240,6 @@ class ResetPassword {
                             'status': error.status,
                             'message': error.errors.message,
                         }
-                        // console.log(this.objData);
 
                         this.resError();
                     }
@@ -274,7 +248,6 @@ class ResetPassword {
 
                     this.flagSend = true;
                 });
-
         }
     }
 }

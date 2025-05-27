@@ -12,7 +12,7 @@
 <meta property="og:url" content="{{ route($page, $post->slug) }}">
 <link rel="canonical" href="{{ route($page, $post->slug) }}">
 
-
+<link rel="shortcut icon" href="{{ asset('images/favicons/favicon.ico') }}">
 
 
 <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('images/favicons/apple-icon-57x57.png') }}">

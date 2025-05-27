@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Frontend\Auth\AuthUserController;
 use App\Http\Controllers\Frontend\Auth\ForgotPasswordController;
 use App\Http\Controllers\Frontend\BlogController;
+use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ServiceController;
 use App\Http\Controllers\Frontend\TestController;
@@ -28,6 +29,8 @@ Route::prefix(Langs::getLocale())->middleware('langs')->group(function () {
 
 
     Route::get('/about', [AboutController::class, 'index'])->name('about');
+    Route::get('/contacts', [ContactController::class, 'index'])->name('contacts');
+    // Route::post('/contacts', [ContactController::class, 'send'])->name('contacts.send');
 
 
 
@@ -36,6 +39,7 @@ Route::prefix(Langs::getLocale())->middleware('langs')->group(function () {
     Route::get('/reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password');
 
     Route::middleware(['throttle:user-auth'])->group(function () {
+        Route::post('/contacts', [ContactController::class, 'send'])->name('contacts.send');
         Route::post('/forgot-password', [ForgotPasswordController::class, 'submitForgotPasswordForm'])->name('forgot.password.post');
         Route::post('/reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
     });

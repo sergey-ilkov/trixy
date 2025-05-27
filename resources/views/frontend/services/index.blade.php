@@ -4,7 +4,8 @@
 
 @push('css')
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
+{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"> --}}
+<link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css') }}">
 
 @endpush
 
@@ -12,8 +13,8 @@
 
 @push('js')
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" defer></script>
-
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" defer></script> --}}
+<script src="{{ asset('js/swiper-bundle.min.js') }}" defer></script>
 @endpush
 
 
@@ -255,7 +256,7 @@
 
                             <ul class="services-tabs__list">
                                 <li class="services-tabs__item">
-                                    увійти в особистий кабінет Flexy
+                                    увійти в особистий кабінет Trixy
                                 </li>
                                 <li class="services-tabs__item">
                                     обрати кредитний сервіс та натиснути кнопку "Отримати позику"

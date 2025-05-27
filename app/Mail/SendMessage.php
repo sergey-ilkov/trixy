@@ -10,7 +10,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class SendCode extends Mailable
+class SendMessage extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -29,7 +29,7 @@ class SendCode extends Mailable
     {
         return new Envelope(
             from: new Address(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME')),
-            subject: 'Підтвердження e-mail',
+            subject: 'Повідомлення Trixy',
         );
     }
 
@@ -39,7 +39,7 @@ class SendCode extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'frontend.emails.code',
+            view: 'frontend.emails.message',
         );
     }
 

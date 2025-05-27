@@ -25,7 +25,7 @@
                         <div class="slider-post__item-image">
                              <a href="{{ route('article', $post->slug) }}" class="slider-post__img-link">
             
-                                 <img src="{{ asset('storage/' . $post->image_min) }}" alt="{{ $post->alt_image }}">
+                                 <img loading="lazy" src="{{ asset('images/loading.png') }}" data-src="{{ asset('storage/' . $post->image_min) }}" alt="{{ $post->alt_image }}">
                              </a>
                         </div>
             

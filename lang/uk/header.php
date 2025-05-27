@@ -6,6 +6,7 @@ return [
         'services' => 'Кредитні сервіси',
         'blog' => 'Блог',
         'about' => 'Про нас',
+        'contacts' => 'Контакти',
     ],
     'buttons' => [
         'registration' => 'Зареєструватись',

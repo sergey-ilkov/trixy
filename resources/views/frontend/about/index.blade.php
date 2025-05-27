@@ -93,7 +93,7 @@
                 </div>
 
                 <div class="mission-image">
-                    <img width="648" height="552" class="mission__img" src="{{ asset('images/about/mission.webp') }}" alt="">
+                    <img loading="lazy" width="648" height="552" class="mission__img" src="{{ asset('images/loading.png') }}" data-src="{{ asset('images/about/mission.webp') }}" alt="">
                 </div>
 
             </div>

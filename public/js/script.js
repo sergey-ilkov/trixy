@@ -8,7 +8,7 @@ const header = document.querySelector('.header');
 const navMenu = document.querySelector('#nav-menu');
 const burgerMenu = document.querySelector('#burger-menu');
 
-
+const tokenCsrf = document.querySelector('[name="csrf-token"]').getAttribute('content');
 
 if (burgerMenu) {
     burgerMenu.addEventListener('click', () => {
@@ -338,12 +338,48 @@ class Tabs {
 }
 
 
+// ? images lazy load
+const imageObserver = new IntersectionObserver(
+    (entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.src = entry.target.dataset.src;
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+    rootMargin: "500px 0px 0px"
+}
+);
+
+
+
+function initImageObserver() {
+
+    const lazyLoadImages = document.querySelectorAll('img[loading="lazy"]');
+
+    if (lazyLoadImages.length > 0) {
+        lazyLoadImages.forEach(image => {
+            if (image.getAttribute('data-src')) {
+                imageObserver.observe(image)
+            }
+        }
+        );
+    }
+}
+
+
+
+
 const pageHome = document.querySelector('.page-home');
 const pageServices = document.querySelector('.page-services');
 const pageAbout = document.querySelector('.page-about');
 const pageBlog = document.querySelector('.page-blog');
+const pageContacts = document.querySelector('.page-contacts');
 
 window.addEventListener('DOMContentLoaded', () => {
+
+    initImageObserver();
 
     if (pageHome) {
 
@@ -372,6 +408,13 @@ window.addEventListener('DOMContentLoaded', () => {
     if (pageBlog) {
 
         initTopServices();
+    }
+
+    if (pageContacts) {
+        initAccordionFaq();
+
+        initSliderPosts();
+
     }
 
 })
@@ -531,7 +574,6 @@ class SignUp {
 
         this.modalForm = this.modal.querySelector('.modal-form');
 
-        this.token = document.querySelector('[name="csrf-token"]');
 
         this.objData = null;
 
@@ -639,8 +681,6 @@ class SignUp {
             }
         })
         this.btnSignUp.addEventListener('click', () => {
-            // console.log('this.flagValid ', this.flagValid);
-            // console.log('this.flagSend ', this.flagSend);
 
             this.validationSend();
 
@@ -837,8 +877,8 @@ class SignUp {
             this.objSendData['action'] = 'sign-up';
         }
 
-        if (this.token) {
-            this.objSendData['_token'] = this.token.getAttribute('content');
+        if (tokenCsrf) {
+            this.objSendData['_token'] = tokenCsrf;
         }
     }
 
@@ -971,12 +1011,6 @@ class SignUp {
 
             this.btnConfirmEmail.removeAttribute('disabled');
 
-
-            // if (this.errors['send-email']) {
-            //     this.btnConfirmEmail.removeAttribute('disabled');
-            // }
-
-
         }
 
         if (this.currentRequest === 'sign-up') {
@@ -989,42 +1023,7 @@ class SignUp {
             this.btnConfirmEmail.removeAttribute('disabled');
 
             this.codeConfirmGroup.style.display = 'none';
-
-            // this.html = '';
-            // for (const key in this.errors) {
-            //     this.html += `<span>${this.errors[key]}</span>`;
-            // }
-
-            // this.messageErrors.innerHTML = this.html;
-            // this.modalPreloader.style.display = 'none';
-            // this.messageErrors.style.display = 'flex';
-
-            // this.inputs.forEach(input => {
-            //     const name = input.name;
-            //     if (this.errors[name]) {
-            //         this.currentFormGroup = input.parentNode;
-            //         this.currentFormGroup.classList.remove('valid');
-            //         this.currentFormGroup.classList.add('error');
-            //     }
-            // })
-
-            // if (this.errors['code']) {
-            //     const input = this.modal.querySelector('[name="code"]');
-            //     input.value = '';
-            //     this.currentFormGroup = input.parentNode;
-            //     this.currentFormGroup.classList.remove('error');
-
-            //     this.btnConfirmEmail.removeAttribute('disabled');
-
-            //     this.codeConfirmGroup.style.display = 'none';
-            // }
-
-            // if (this.errors['register']) {
-            //     this.btnSignUp.removeAttribute('disabled');
-            // }
         }
-
-
     }
 
 
@@ -1085,14 +1084,9 @@ class SignUp {
                 .catch(error => {
 
                     if (error.status === 419 || error.status === 429 || error.status === 422) {
-                        // this.objData = {
-                        //     'status': error.status,
-                        //     'message': error.errors.message,
-                        //     'errors': error.errors,
-                        // }
+
                         this.objData = error.errors;
                         this.objData['status'] = error.status;
-                        // console.log(this.objData);
 
                         this.resError();
                     }
@@ -1139,7 +1133,7 @@ class SignIn {
 
         this.modalForm = this.modal.querySelector('.modal-form');
 
-        this.token = document.querySelector('[name="csrf-token"]');
+
 
         this.objData = null;
 
@@ -1287,8 +1281,8 @@ class SignIn {
         this.objSendData['email'] = this.inputEmail.value;
         this.objSendData['password'] = this.inputPass.value;
 
-        if (this.token) {
-            this.objSendData['_token'] = this.token.getAttribute('content');
+        if (tokenCsrf) {
+            this.objSendData['_token'] = tokenCsrf;
         }
 
     }
@@ -1427,14 +1421,9 @@ class SignIn {
 
 
                     if (error.status === 419 || error.status === 429 || error.status === 422) {
-                        // this.objData = {
-                        //     'status': error.status,
-                        //     'message': error.errors.message,
-                        // }
+
                         this.objData = error.errors;
                         this.objData['status'] = error.status;
-
-                        // console.log(this.objData);
 
                         this.resError();
                     }
@@ -1522,8 +1511,6 @@ class CreditServices {
         this.divModalHistoryBody = null;
         this.divModalHistoryContent = null;
 
-
-
         this.options = {
             classShow: 'show',
             classHidden: 'hidden',
@@ -1555,7 +1542,6 @@ class CreditServices {
 
         this.flagSend = true;
 
-        this.token = document.querySelector('[name="csrf-token"]');
 
         this.actions = {
             'get-services': 'get-services',
@@ -1573,8 +1559,6 @@ class CreditServices {
         this.timerId = null;
 
         this.objServicesData = null;
-
-
 
         this.divCurrentCategory = null;
         this.divCurrentPaginationInfo = null;
@@ -1595,8 +1579,6 @@ class CreditServices {
 
         this.currentService = null;
         this.currentServiceId = null;
-
-
 
         this.modalMessage = document.querySelector('#messages');
         this.modalMessageText = this.modalMessage.querySelector('.message-text');
@@ -1634,21 +1616,6 @@ class CreditServices {
                 animation: false,
             });
 
-
-            // this.timerId = setTimeout(() => {
-
-            //     // clearTimeout(this.timerId);
-
-            //     new Accordion(this.divServicesTabs, {
-            //         accordion: '.services-accordion',
-            //         button: '.services-accordion__btn',
-            //         content: '.services-tabs__panel',
-            //         speed: 400,
-            //         firstOpen: true,
-            //     });
-
-
-            // }, 1000);
 
         }
     }
@@ -1724,21 +1691,19 @@ class CreditServices {
 
                 // ? current services all hiiden/active
                 if (this.currentService.closest('.hidden')) {
-                    // this.currentService.classList.remove('hidden');
+
                     this.currentServiceItems.forEach(item => {
                         item.classList.remove('hidden');
                     })
                     this.currentRequest = this.actions['active-service'];
 
-
                 } else {
-                    // this.currentService.classList.add('hidden');
+
                     this.currentServiceItems.forEach(item => {
                         item.classList.add('hidden');
                     })
                     this.currentRequest = this.actions['hidden-service'];
                 }
-
 
                 // ? if user: send data else: 
                 if (this.userAuth) {
@@ -1746,10 +1711,7 @@ class CreditServices {
                 } else {
                     this.saveServiceLocaleStorage(this.currentServiceId);
                 }
-
             }
-
-
 
             if (e.target.closest('.btn-history')) {
                 this.currentBtnHistory = e.target.closest('.btn-history');
@@ -1766,7 +1728,6 @@ class CreditServices {
                 }
             }
 
-
             if (e.target.closest('.service-link')) {
                 this.currentRequest = this.actions['get-credit'];
 
@@ -1774,7 +1735,6 @@ class CreditServices {
                     this.sendAction();
                 }
             }
-
 
             // ? prevBtn
             if (e.target.closest('.pagination__btn-prev')) {
@@ -1816,7 +1776,6 @@ class CreditServices {
 
         if (this.servicesLS && Array.isArray(this.servicesLS) && this.servicesLS.length != 0) {
 
-            // console.log('this.servicesLS: ', this.servicesLS);
 
             if (this.currentRequest == this.actions['hidden-service']) {
                 this.servicesLS.push(currentId);
@@ -1832,7 +1791,7 @@ class CreditServices {
             this.servicesLS = [currentId];
 
         }
-        // console.log('LS save this.servicesLS: ', this.servicesLS);
+
 
         localStorage.setItem('services', JSON.stringify(this.servicesLS));
     }
@@ -1875,32 +1834,18 @@ class CreditServices {
             })
         }
 
-
         this.divModalHistoryContent.innerHTML = this.html;
-
         this.divModalHistoryBody.classList.add('show');
 
     }
 
     sendAction() {
 
-
         this.formDefaultObjSendData();
 
         this.objSendData['service_id'] = this.currentServiceId;
 
-
         this.send();
-
-        // if (this.userAuth) {
-
-        //     this.formDefaultObjSendData();
-
-        //     this.objSendData['service_id'] = this.currentServiceId;
-
-
-        //     this.send();
-        // }
 
     }
 
@@ -1926,7 +1871,6 @@ class CreditServices {
             this.getServicesCategory();
         }
     }
-
 
     showServicesAll() {
         this.timerId = setTimeout(() => {
@@ -1975,53 +1919,21 @@ class CreditServices {
 
         this.objSendData['action'] = this.currentRequest;
 
-        if (this.token) {
-            this.objSendData['_token'] = this.token.getAttribute('content');
+        if (tokenCsrf) {
+            this.objSendData['_token'] = tokenCsrf;
         }
 
     }
 
-    // function getServicesLocaleStorage(id) {
-    //     let services = localStorage.getItem('services');
-
-
-    //     // console.log('id: ', id);
-
-
-    //     if (services) {
-
-    //         services = JSON.parse(services);
-
-    //         if (Array.isArray(services) && services.length != 0) {
-
-    //             if (services.indexOf(id) != -1) {
-    //                 return true;
-    //             }
-    //         }
-
-    //         console.log('id: ', id);
-    //         // console.log('services.indexOf(id): ', services.indexOf(id));
-    //     }
-
-    //     return false;
-    // }
     getServiceLocaleStorage() {
         let services = localStorage.getItem('services');
 
-
         if (services) {
-
             services = JSON.parse(services);
             if (Array.isArray(services) && services.length != 0) {
 
-                // console.log(services);
-                // console.log(Array.isArray(services));
-                // console.log(services.length != 0);
                 return services;
             }
-
-
-
         }
 
         return false;
@@ -2047,7 +1959,6 @@ class CreditServices {
                     this.html += '<div class="credit-services__items">';
 
                     this.servicesLS = this.getServiceLocaleStorage();
-                    // console.log('this.servicesLS ', this.servicesLS);
 
                     dataServices.forEach(data => {
                         if (this.servicesLS && this.servicesLS.indexOf(data.id) != -1) {
@@ -2065,7 +1976,6 @@ class CreditServices {
                         const valuePagination = `${this.objServicesData[category]['to']} / ${this.objServicesData[category]['total']}`;
                         this.html += createPaginationHtml(valuePagination);
                     }
-
 
                     service.innerHTML = this.html;
 
@@ -2087,9 +1997,6 @@ class CreditServices {
         if (dataServices && dataServices.length > 0) {
 
             this.html = '';
-            // dataServices.forEach(data => {
-            //     this.html += createServiceHtml(data, this.userAuth);
-            // })
 
             this.servicesLS = this.getServiceLocaleStorage();
 
@@ -2141,13 +2048,7 @@ class CreditServices {
 
             this.objServicesData = this.objData['data'];
 
-
-
             this.addHtml();
-
-            // this.initTabsAccordion();
-
-            // this.events();
 
             this.showServicesAll();
 
@@ -2173,8 +2074,6 @@ class CreditServices {
 
     resError() {
 
-        // this.initTabsAccordion();
-
 
         if (this.objData['status'] == 419 || this.objData['status'] == 429) {
             this.modalMessageText.innerHTML = this.objData.message;
@@ -2191,7 +2090,6 @@ class CreditServices {
                 html += this.objData.errors[key] + '<br>';
 
                 console.error(this.objData.errors[key]);
-
             }
 
             this.modalMessageText.innerHTML = html;
@@ -2237,7 +2135,6 @@ class CreditServices {
                             throw new Error(`HTTP error, status = ${response.status}`);
                         }
                     }
-
 
                     return response.json();
                 })
@@ -2321,13 +2218,10 @@ function createPaginationHtml(paginate) {
 }
 
 
-
 function createServiceHtml(data, auth = false, serviceHidden = false) {
 
     const starsHtml = createStarsHtml(data.vote_rating);
     const chartHtml = createChartSvg(data.rating);
-
-
 
     let html = '';
 
@@ -2344,8 +2238,6 @@ function createServiceHtml(data, auth = false, serviceHidden = false) {
             html += `<div class="credit-service bg-grd-1" data-service-id="${data.id}">`;
         }
     }
-
-
 
     html += `
         
@@ -2545,12 +2437,8 @@ function createServiceHtml(data, auth = false, serviceHidden = false) {
         </div>  
     `;
 
-
-
     return html;
 }
-
-
 
 
 
@@ -2571,12 +2459,9 @@ class ForgotPasswordModal {
         this.messageError = this.form.querySelector('.message-errors');
         this.currentFormGroup = null;
 
-        // this.btnsShowPass = this.form.querySelectorAll('.pass-btn');
-
         this.btnSend = this.form.querySelector('.btn-send');
 
-        // this.inputPassword = this.form.querySelector('#password-forgot');
-        this.token = document.querySelector('[name="csrf-token"]');
+
         this.value = null;
 
         this.flagSend = false;
@@ -2587,8 +2472,7 @@ class ForgotPasswordModal {
         this.init();
     }
     init() {
-        // console.log('init ForgotPassword Modal');
-        // console.log(this.btnsShowPass);
+
         this.defaultForm();
         this.events();
     }
@@ -2613,7 +2497,6 @@ class ForgotPasswordModal {
         });
 
         this.btnOpen.addEventListener('click', () => {
-            // console.log('click');
             closeModal(this.divModalSignIn);
             openModal(this.modal);
 
@@ -2634,15 +2517,10 @@ class ForgotPasswordModal {
 
         });
 
-
-
-
         this.btnSend.addEventListener('click', () => {
             this.validation();
 
-
             if (this.flagSend) {
-                // console.log('input valid... send');
                 this.defaultForm();
                 this.preloader.style.display = 'flex';
                 this.getFormData();
@@ -2673,7 +2551,6 @@ class ForgotPasswordModal {
         }
     }
 
-
     getFormData() {
         this.objSendData = {};
         this.objSendData[this.inputEmail.name] = this.inputEmail.value;
@@ -2681,12 +2558,7 @@ class ForgotPasswordModal {
         if (this.token) {
             this.objSendData['_token'] = this.token.getAttribute('content');
         }
-        // console.log('this.objSendData: ', this.objSendData);
-
-
-
     }
-
 
     resSuccess() {
         if (this.objData['forgot']) {
@@ -2696,13 +2568,7 @@ class ForgotPasswordModal {
         }
     }
 
-
     resError() {
-
-        // console.log('resError()');
-
-
-
 
         if (this.objData['status'] == 429 || this.objData['status'] == 419 || this.objData['status'] == 422) {
 
@@ -2722,15 +2588,11 @@ class ForgotPasswordModal {
             this.html = '';
             for (const key in this.errors) {
                 this.html += `<span>${this.errors[key]}</span>`;
-
-                // console.log(this.errors[key]);
-
             }
 
             this.messageError.innerHTML = this.html;
             this.preloader.style.display = 'none';
             this.messageError.style.display = 'flex';
-
 
             this.currentFormGroup = this.inputEmail.parentNode;
             this.currentFormGroup.classList.remove('valid');
@@ -2748,7 +2610,6 @@ class ForgotPasswordModal {
             this.flagSend = false;
 
             this.objData = null;
-
 
             const options = {
                 method: 'POST',
@@ -2803,7 +2664,6 @@ class ForgotPasswordModal {
                             'status': error.status,
                             'message': error.errors.message,
                         }
-                        // console.log(this.objData);
 
                         this.resError();
                     }
@@ -2812,11 +2672,9 @@ class ForgotPasswordModal {
 
                     this.flagSend = true;
                 });
-
         }
     }
 }
-
 
 const forgotPasswordModal = document.querySelector('#forgot-password');
 const btnForgotPassword = document.querySelector('#modal-btn-forgot');
@@ -2825,3 +2683,218 @@ if (forgotPasswordModal && btnForgotPassword && divModalSignIn) {
 }
 
 
+class MessageSend {
+    constructor(form) {
+        this.form = form;
+        this.inputs = this.form.querySelectorAll('input');
+        this.textarea = this.form.querySelector('textarea');
+        this.btnSend = this.form.querySelector('#btn-contacts-send');
+
+        this.preloader = this.form.querySelector('.contacts-form-preloader');
+        this.messageSucces = this.form.querySelector('.contact-forms-success');
+        this.messageError = this.form.querySelector('.message-errors');
+
+        this.modalMessage = document.querySelector('#messages');
+        this.modalMessageText = this.modalMessage.querySelector('.message-text');
+
+
+        this.currentFormGroup = null;
+        this.objSendData = null
+
+        this.flagSend = false;
+
+        this.url = this.form.getAttribute('action');
+
+        this.objData = null;
+
+        this.timerId = null;
+        this.time = 2000;
+
+        this.init();
+    }
+    init() {
+
+        this.events();
+    }
+    // default() { }
+    events() {
+
+        this.form.addEventListener('submit', e => {
+            e.preventDefault();
+        });
+
+        this.inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                this.currentFormGroup = input.parentNode;
+                this.currentFormGroup.classList.remove('error');
+            })
+        })
+        this.textarea.addEventListener('input', () => {
+            this.currentFormGroup = this.textarea.parentNode;
+            this.currentFormGroup.classList.remove('error');
+        })
+
+        this.btnSend.addEventListener('click', () => {
+            this.validation();
+
+            if (this.flagSend) {
+                this.formObjSendData();
+                this.messageError.innerHTML = '';
+                this.messageError.style.display = 'none';
+                this.preloader.style.display = 'flex';
+                this.send();
+            }
+
+        })
+    }
+
+    validation() {
+        this.flagSend = true;
+        this.inputs.forEach(input => {
+            if (input.value.length == 0) {
+                this.flagSend = false;
+                this.currentFormGroup = input.parentNode;
+                this.currentFormGroup.classList.add('error');
+            }
+        })
+        if (this.textarea.value.length == 0) {
+            this.flagSend = false;
+            this.currentFormGroup = this.textarea.parentNode;
+            this.currentFormGroup.classList.add('error');
+        }
+    }
+
+    formObjSendData() {
+        this.objSendData = {};
+
+        this.inputs.forEach(input => {
+
+            this.objSendData[input.name] = input.value;
+
+        })
+        this.objSendData[this.textarea.name] = this.textarea.value;
+
+        if (tokenCsrf) {
+            this.objSendData['_token'] = tokenCsrf;
+        }
+    }
+    resSuccess() {
+        this.preloader.style.display = 'none';
+
+        this.form.reset();
+        this.messageSucces.style.display = 'flex';
+
+        this.timerId = setTimeout(() => {
+            clearTimeout(this.timerId);
+            this.messageSucces.style.display = 'none';
+        }, this.time);
+    }
+    resError() {
+        this.preloader.style.display = 'none';
+        if (this.objData['status'] == 429) {
+            this.messageError.innerHTML = this.objData.message;
+            this.messageError.style.display = 'flex';
+            return;
+        }
+
+
+        if (this.objData['status'] == 419) {
+            this.modalMessageText.innerHTML = this.objData.message;
+
+            openModal(this.modalMessage);
+
+            return;
+        }
+
+        this.errors = this.objData['errors'];
+        console.log(this.errors);
+
+        this.html = '';
+        for (const key in this.errors) {
+            this.html += `<span>${this.errors[key]}</span>`;
+        }
+
+        this.messageError.innerHTML = this.html;
+
+        this.messageError.style.display = 'flex';
+    }
+    send() {
+
+
+        if (this.flagSend) {
+            this.flagSend = false;
+
+            this.objData = null;
+
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json;charset=utf-8'
+                },
+                body: JSON.stringify(this.objSendData)
+
+            };
+
+            fetch(this.url, options)
+                .then(async response => {
+                    if (!response.ok) {
+                        if (response.status === 422) {
+                            const errorData = await response.json();
+                            throw { status: 422, errors: errorData };
+                        } else {
+                            if (response.status === 419) {
+                                const errorData = await response.json();
+                                throw { status: 419, errors: errorData };
+                            }
+                            if (response.status === 429) {
+                                const errorData = await response.json();
+                                throw { status: 429, errors: errorData };
+                            }
+                            throw new Error(`HTTP error, status = ${response.status}`);
+                        }
+                    }
+
+                    return response.json();
+                })
+                .then(result => {
+
+                    this.objData = result;
+
+                    if (result.status == 'ok') {
+                        this.resSuccess();
+                    } else {
+                        this.resError();
+
+                    }
+
+                    this.flagSend = true;
+
+                })
+                .catch(error => {
+
+                    if (error.status === 419 || error.status === 429 || error.status === 422) {
+
+                        this.objData = error.errors;
+                        this.objData['status'] = error.status;
+
+                        this.resError();
+                    }
+
+
+                    console.error('Fetch error:', error);
+
+                    this.flagSend = true;
+                });
+        }
+
+
+
+    }
+}
+
+
+const divContactsForm = document.querySelector('#contacts-form');
+if (divContactsForm) {
+    new MessageSend(divContactsForm);
+}

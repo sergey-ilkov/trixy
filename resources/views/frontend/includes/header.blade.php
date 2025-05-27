@@ -48,6 +48,9 @@
                     <li class="header-menu__item">
                         <a class="header-menu__link {{ active_link('about') }}" href="{{ route('about') }}">{{ __('header.links.about') }}</a>
                     </li>
+                    <li class="header-menu__item">
+                        <a class="header-menu__link {{ active_link('contacts') }}" href="{{ route('contacts') }}">{{ __('header.links.contacts') }}</a>
+                    </li>
                 </ul>
 
                 @if (!auth('web')->user())
