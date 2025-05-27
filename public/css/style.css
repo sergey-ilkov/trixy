@@ -5217,7 +5217,7 @@ form .modal-form-text {
     display: none;
 }
 .contacts-box-address {
-    padding-top: 80px;
+    margin-bottom: 100px;
 }
 .contacts-address__title {
     margin-bottom: 20px;
