@@ -388,12 +388,12 @@ window.addEventListener('load', () => {
 
     initImageObserver();
 
-    if (pageContacts) {
-        initMap();
-    }
-    if (pageServices) {
-        initCreditServices();
-    }
+    // if (pageContacts) {
+    //     initMap();
+    // }
+    // if (pageServices) {
+    //     initCreditServices();
+    // }
 })
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -418,6 +418,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     if (pageContacts) {
+        initMap();
         initAccordionFaq();
         initSliderPosts();
     }
