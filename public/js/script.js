@@ -378,66 +378,46 @@ function initMap() {
     }
 }
 
-window.addEventListener('load', () => {
-
-    initImageObserver();
-
-    if (pageContacts) {
-        initMap();
-    }
-
-
-})
-
 const pageHome = document.querySelector('.page-home');
 const pageServices = document.querySelector('.page-services');
 const pageAbout = document.querySelector('.page-about');
 const pageBlog = document.querySelector('.page-blog');
 const pageContacts = document.querySelector('.page-contacts');
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
 
-
+    initImageObserver();
 
     if (pageHome) {
-
         initSliderServices();
-
         initSliderReviews();
-
         initAccordionFaq();
-
         initSliderPosts();
     }
 
     if (pageServices) {
-
         initCreditServices();
-
         initAccordionFaq();
-
         initSliderPosts();
     }
 
     if (pageAbout) {
-
         initSliderReviews();
     }
     if (pageBlog) {
-
         initTopServices();
     }
 
     if (pageContacts) {
+        initMap();
         initAccordionFaq();
-
         initSliderPosts();
-
     }
-
 })
 
+// window.addEventListener('DOMContentLoaded', () => {
 
+// })
 
 function initTopServices() {
     const divTopServices = document.querySelector('#top-services');
