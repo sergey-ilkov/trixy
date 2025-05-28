@@ -388,9 +388,14 @@ window.addEventListener('load', () => {
 
     initImageObserver();
 
-    // if (pageContacts) {
-    //     initMap();
-    // }
+    if (pageContacts) {
+        initMap();
+    }
+
+
+})
+
+window.addEventListener('DOMContentLoaded', () => {
     if (pageHome) {
         initSliderServices();
         initSliderReviews();
@@ -412,16 +417,10 @@ window.addEventListener('load', () => {
     }
 
     if (pageContacts) {
-        initMap();
         initAccordionFaq();
         initSliderPosts();
     }
-
 })
-
-// window.addEventListener('DOMContentLoaded', () => {
-
-// })
 
 function initTopServices() {
     const divTopServices = document.querySelector('#top-services');
