@@ -356,7 +356,7 @@ const imageObserver = new IntersectionObserver(
 
 function initImageObserver() {
 
-    const lazyLoadImages = document.querySelectorAll('img[loading="lazy"]');
+    const lazyLoadImages = document.querySelectorAll('img.lazy');
 
     if (lazyLoadImages.length > 0) {
         lazyLoadImages.forEach(image => {
@@ -368,8 +368,26 @@ function initImageObserver() {
     }
 }
 
+function initMap() {
+    const map = document.querySelector('#contacts-map');
+    if (map) {
+        console.log('da');
+        const src = map.getAttribute('data-src');
+        map.src = src;
+
+    }
+}
+
+window.addEventListener('load', () => {
+
+    initImageObserver();
+
+    if (pageContacts) {
+        initMap();
+    }
 
 
+})
 
 const pageHome = document.querySelector('.page-home');
 const pageServices = document.querySelector('.page-services');
@@ -379,7 +397,7 @@ const pageContacts = document.querySelector('.page-contacts');
 
 window.addEventListener('DOMContentLoaded', () => {
 
-    initImageObserver();
+
 
     if (pageHome) {
 

@@ -72,7 +72,7 @@
                 <div class="example-box bg-grd-1">
                     <div class="example-service">
                         <div class="example-service__col">
-                            <img loading="lazy"  width="160" height="80" class="example-service__logo" data-src="{{ asset('images/services/credit-kasa.png') }}"
+                            <img width="160" height="80" class="example-service__logo lazy" data-src="{{ asset('images/services/credit-kasa.png') }}"
                                 alt="Логотип Credit-Kasa">
                             <span class="example-service__title">“Credit-Kasa”</span>
                         </div>
@@ -97,7 +97,7 @@
                     </div>
                     <div class="example-service">
                         <div class="example-service__col">
-                            <img loading="lazy"  width="160" height="80" class="example-service__logo" data-src="{{ asset('images/services/e-money.png') }}"
+                            <img width="160" height="80" class="example-service__logo lazy" data-src="{{ asset('images/services/e-money.png') }}"
                                 alt="Логотип Є-гроші">
                             <span class="example-service__title">“Є-гроші”</span>
                         </div>
@@ -122,7 +122,7 @@
                     </div>
                     <div class="example-service">
                         <div class="example-service__col">
-                            <img loading="lazy"  width="160" height="80" class="example-service__logo"
+                            <img width="160" height="80" class="example-service__logo lazy"
                                 data-src="{{ asset('images/services/selfie-credit.png') }}" alt="Логотип Selfie-credit">
                             <span class="example-service__title">“Selfie-credit”</span>
                         </div>
@@ -151,7 +151,7 @@
                     </div>
                     <div class="example-service">
                         <div class="example-service__col">
-                            <img loading="lazy"  width="160" height="80" class="example-service__logo" data-src="{{ asset('images/services/credit-plus.png') }}"
+                            <img width="160" height="80" class="example-service__logo lazy" data-src="{{ asset('images/services/credit-plus.png') }}"
                                 alt="Логотип Credit-Plus">
                             <span class="example-service__title">“Credit-Plus”</span>
                         </div>
@@ -253,7 +253,7 @@
 
                     <div class="example-service">
                         <div class="example-service__col">
-                            <img loading="lazy"  width="160" height="80" class="example-service__logo" data-src="{{ asset('images/services/credit-kasa.png') }}"
+                            <img width="160" height="80" class="example-service__logo lazy" data-src="{{ asset('images/services/credit-kasa.png') }}"
                                 alt="Логотип Credit-Kasa">
                             <span class="example-service__title">“Credit-Kasa”</span>
                         </div>
@@ -278,7 +278,7 @@
                     </div>
                     <div class="example-service">
                         <div class="example-service__col">
-                            <img loading="lazy"  width="160" height="80" class="example-service__logo" data-src="{{ asset('images/services/e-money.png') }}"
+                            <img width="160" height="80" class="example-service__logo lazy" data-src="{{ asset('images/services/e-money.png') }}"
                                 alt="Логотип Є-гроші">
                             <span class="example-service__title">“Є-гроші”</span>
                         </div>
@@ -303,7 +303,7 @@
                     </div>
                     <div class="example-service">
                         <div class="example-service__col">
-                            <img loading="lazy"  width="160" height="80" class="example-service__logo"
+                            <img width="160" height="80" class="example-service__logo lazy"
                                 data-src="{{ asset('images/services/selfie-credit.png') }}" alt="Логотип Selfie-credit">
                             <span class="example-service__title">“Selfie-credit”</span>
                         </div>
@@ -332,7 +332,7 @@
                     </div>
                     <div class="example-service">
                         <div class="example-service__col">
-                            <img loading="lazy"  width="160" height="80" class="example-service__logo" data-src="{{ asset('images/services/credit-plus.png') }}"
+                            <img width="160" height="80" class="example-service__logo lazy" data-src="{{ asset('images/services/credit-plus.png') }}"
                                 alt="Логотип Credit-Plus">
                             <span class="example-service__title">“Credit-Plus”</span>
                         </div>
@@ -393,7 +393,7 @@
 
                     <div class="example-service">
                         <div class="example-service__col">
-                            <img loading="lazy"  width="160" height="80" class="example-service__logo" data-src="{{ asset('images/services/credit-kasa.png') }}"
+                            <img width="160" height="80" class="example-service__logo lazy" data-src="{{ asset('images/services/credit-kasa.png') }}"
                                 alt="Логотип Credit-Kasa">
                             <span class="example-service__title">“Credit-Kasa”</span>
                         </div>
@@ -418,7 +418,7 @@
                     </div>
                     <div class="example-service">
                         <div class="example-service__col">
-                            <img loading="lazy"  width="160" height="80" class="example-service__logo" data-src="{{ asset('images/services/e-money.png') }}"
+                            <img width="160" height="80" class="example-service__logo lazy" data-src="{{ asset('images/services/e-money.png') }}"
                                 alt="Логотип Є-гроші">
                             <span class="example-service__title">“Є-гроші”</span>
                         </div>
@@ -443,7 +443,7 @@
                     </div>
                     <div class="example-service">
                         <div class="example-service__col">
-                            <img loading="lazy"  width="160" height="80" class="example-service__logo"
+                            <img width="160" height="80" class="example-service__logo lazy"
                                 data-src="{{ asset('images/services/selfie-credit.png') }}" alt="Логотип Selfie-credit">
                             <span class="example-service__title">“Selfie-credit”</span>
                         </div>
@@ -472,7 +472,7 @@
                     </div>
                     <div class="example-service">
                         <div class="example-service__col">
-                            <img loading="lazy"  width="160" height="80" class="example-service__logo" data-src="{{ asset('images/services/credit-plus.png') }}"
+                            <img width="160" height="80" class="example-service__logo lazy" data-src="{{ asset('images/services/credit-plus.png') }}"
                                 alt="Логотип Credit-Plus">
                             <span class="example-service__title">“Credit-Plus”</span>
                         </div>
@@ -533,7 +533,7 @@
 
                     <div class="example-service">
                         <div class="example-service__col">
-                            <img loading="lazy"  width="160" height="80" class="example-service__logo" data-src="{{ asset('images/services/credit-kasa.png') }}"
+                            <img width="160" height="80" class="example-service__logo lazy" data-src="{{ asset('images/services/credit-kasa.png') }}"
                                 alt="Логотип Credit-Kasa">
                             <span class="example-service__title">“Credit-Kasa”</span>
                         </div>
@@ -559,7 +559,7 @@
                     <div class="example-service example-service-column">
                         <div class="example-service-top">
                             <div class="example-service__col">
-                                <img loading="lazy"  width="160" height="80" class="example-service__logo"
+                                <img width="160" height="80" class="example-service__logo lazy"
                                     data-src="{{ asset('images/services/selfie-credit.png') }}" alt="Логотип Selfie-credit">
                                 <span class="example-service__title">“Selfie-credit”</span>
                             </div>
@@ -598,7 +598,7 @@
                     </div>
                     <div class="example-service">
                         <div class="example-service__col">
-                            <img loading="lazy"  width="160" height="80" class="example-service__logo" data-src="{{ asset('images/services/e-money.png') }}"
+                            <img width="160" height="80" class="example-service__logo lazy" data-src="{{ asset('images/services/e-money.png') }}"
                                 alt="Логотип Є-гроші">
                             <span class="example-service__title">“Є-гроші”</span>
                         </div>
@@ -744,7 +744,7 @@
 
                             <div class="swiper-slide">
                                 <div class="services-slider__item">
-                                    <img loading="lazy"  width="160" height="80" class="services-slider__item-img"
+                                    <img width="160" height="80" class="services-slider__item-img lazy"
                                         data-src="{{ asset('images/services/credit-kasa.png') }}" alt="Логотип Credit-Kasa">
                                     <span class="services-slider__item-title">Credit-Kasa</span>
                                     <span class="services-slider__item-btn">Змінити</span>
@@ -752,7 +752,7 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="services-slider__item">
-                                    <img loading="lazy"  width="160" height="80" class="services-slider__item-img"
+                                    <img width="160" height="80" class="services-slider__item-img lazy"
                                         data-src="{{ asset('images/services/selfie-credit.png') }}" alt="Логотип SELFIE credit">
                                     <span class="services-slider__item-title">SELFIE credit</span>
                                     <span class="services-slider__item-btn">Змінити</span>
@@ -760,7 +760,7 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="services-slider__item">
-                                    <img loading="lazy"  width="160" height="80" class="services-slider__item-img"
+                                    <img width="160" height="80" class="services-slider__item-img lazy"
                                         data-src="{{ asset('images/services/credit-plus.png') }}" alt="Логотип Credit-Plus">
                                     <span class="services-slider__item-title">Credit-Plus</span>
                                     <span class="services-slider__item-btn">Змінити</span>
@@ -768,7 +768,7 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="services-slider__item">
-                                    <img loading="lazy"  width="160" height="80" class="services-slider__item-img"
+                                    <img width="160" height="80" class="services-slider__item-img lazy"
                                         data-src="{{ asset('images/services/credit-kasa.png') }}" alt="Логотип Credit-Kasa">
                                     <span class="services-slider__item-title">Credit-Kasa</span>
                                     <span class="services-slider__item-btn">Змінити</span>
@@ -776,7 +776,7 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="services-slider__item">
-                                    <img loading="lazy"  width="160" height="80" class="services-slider__item-img"
+                                    <img width="160" height="80" class="services-slider__item-img lazy"
                                         data-src="{{ asset('images/services/selfie-credit.png') }}" alt="Логотип SELFIE credit">
                                     <span class="services-slider__item-title">SELFIE credit</span>
                                     <span class="services-slider__item-btn">Змінити</span>
@@ -784,7 +784,7 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="services-slider__item">
-                                    <img loading="lazy"  width="160" height="80" class="services-slider__item-img"
+                                    <img width="160" height="80" class="services-slider__item-img lazy"
                                         data-src="{{ asset('images/services/credit-plus.png') }}" alt="Логотип Credit-Plus">
                                     <span class="services-slider__item-title">Credit-Plus</span>
                                     <span class="services-slider__item-btn">Змінити</span>
@@ -840,7 +840,7 @@
 
                     <div class="example-service">
                         <div class="example-service__col">
-                            <img loading="lazy"  width="160" height="80" class="example-service__logo" data-src="{{ asset('images/services/credit-kasa.png') }}"
+                            <img width="160" height="80" class="example-service__logo lazy" data-src="{{ asset('images/services/credit-kasa.png') }}"
                                 alt="Логотип Credit-Kasa">
                             <span class="example-service__title">“Credit-Kasa”</span>
                         </div>
@@ -865,7 +865,7 @@
                     </div>
                     <div class="example-service">
                         <div class="example-service__col">
-                            <img loading="lazy"  width="160" height="80" class="example-service__logo" data-src="{{ asset('images/services/e-money.png') }}"
+                            <img width="160" height="80" class="example-service__logo lazy" data-src="{{ asset('images/services/e-money.png') }}"
                                 alt="Логотип Є-гроші">
                             <span class="example-service__title">“Є-гроші”</span>
                         </div>
@@ -892,7 +892,7 @@
                         <div class="example-service-top">
 
                             <div class="example-service__col">
-                                <img loading="lazy"  width="160" height="80" class="example-service__logo"
+                                <img width="160" height="80" class="example-service__logo lazy"
                                     data-src="{{ asset('images/services/selfie-credit.png') }}" alt="Логотип Selfie-credit">
                                 <span class="example-service__title">“Selfie-credit”</span>
                             </div>
@@ -969,7 +969,7 @@
 
                     <div class="example-service">
                         <div class="example-service__col">
-                            <img loading="lazy"  width="160" height="80" class="example-service__logo" data-src="{{ asset('images/services/credit-kasa.png') }}"
+                            <img width="160" height="80" class="example-service__logo lazy" data-src="{{ asset('images/services/credit-kasa.png') }}"
                                 alt="Логотип Credit-Kasa">
                             <span class="example-service__title">“Credit-Kasa”</span>
                         </div>
@@ -994,7 +994,7 @@
                     </div>
                     <div class="example-service">
                         <div class="example-service__col">
-                            <img loading="lazy"  width="160" height="80" class="example-service__logo" data-src="{{ asset('images/services/e-money.png') }}"
+                            <img width="160" height="80" class="example-service__logo lazy" data-src="{{ asset('images/services/e-money.png') }}"
                                 alt="Логотип Є-гроші">
                             <span class="example-service__title">“Є-гроші”</span>
                         </div>
@@ -1021,7 +1021,7 @@
                         <div class="example-service-top">
 
                             <div class="example-service__col">
-                                <img loading="lazy"  width="160" height="80" class="example-service__logo"
+                                <img width="160" height="80" class="example-service__logo lazy"
                                     data-src="{{ asset('images/services/selfie-credit.png') }}" alt="Логотип Selfie-credit">
                                 <span class="example-service__title">“Selfie-credit”</span>
                             </div>

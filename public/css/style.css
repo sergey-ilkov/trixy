@@ -5236,8 +5236,20 @@ form .modal-form-text {
     display: flex;
     flex-direction: column;
 }
-.contacts-map {
+.contacts-map-wrap {
     width: 800px;
+    position: relative;
+}
+.contacts-map-preloader {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 @media (max-width: 1240px) {
     .contacts-hero {
@@ -5249,7 +5261,7 @@ form .modal-form-text {
         flex-direction: column;
         gap: 50px;
     }
-    .contacts-map {
+    .contacts-map-wrap {
         width: 100%;
         height: 400px;
     }
@@ -5261,8 +5273,7 @@ form .modal-form-text {
     .contacts__desc {
         font-size: 16px;
     }
-    .contacts-map {
-        width: 100%;
+    .contacts-map-wrap {
         height: 300px;
     }
 }

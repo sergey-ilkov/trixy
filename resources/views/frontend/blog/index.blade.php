@@ -85,7 +85,7 @@
                         <a class="blog__item-link-img" href="{{ route('article', $post->slug) }}">
                             <picture>
                                 <source media="(max-width: 600px)" srcset="{{ asset('storage/' . $post->image_min ) }}">
-                                <img loading="lazy" class="blog__item-img" src="{{ asset('images/loading.png') }}" data-src="{{ asset('storage/' . $post->image ) }}" alt="{{ $post->alt_image }}">
+                                <img class="blog__item-img lazy" src="{{ asset('images/loading.png') }}" data-src="{{ asset('storage/' . $post->image ) }}" alt="{{ $post->alt_image }}">
                             </picture>
 
                         </a>
@@ -230,7 +230,7 @@
                             <span class="top-services__item-num">#{{ $loop->iteration }}</span>
                         </div>
                         <div class="top-services__col">
-                            <img class="top-services__item-img" src="{{ asset('storage/' . $service->icon ) }}"
+                            <img class="top-services__item-img lazy" src="{{ asset('images/loading.png') }}" data-src="{{ asset('storage/' . $service->icon ) }}"
                                 alt="Логотип {{ $service->name }}">
                             <span class="top-services__item-title">"{{ $service->name }}"</span>
                         </div>
