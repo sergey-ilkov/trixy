@@ -30,14 +30,14 @@
     
     @stack('css')
     
-    <link rel="stylesheet" href="{{ asset('css/style.min.css') . '?v=' . rand(10, 1000) }}">
-    {{-- <link rel="stylesheet" href="{{ asset('css/style.css') . '?v=' . rand(10, 1000) }}"> --}}
+    
+    <link rel="stylesheet" href="{{ asset('css/style.css') . '?v=' . rand(10, 1000) }}">
 
 
     @stack('js')
 
-    <script src="{{ asset('js/script.min.js') . '?v=' . rand(10, 1000)  }}" defer></script>
-    {{-- <script src="{{ asset('js/script.js') . '?v=' . rand(10, 1000)  }}" defer></script> --}}
+   
+    <script src="{{ asset('js/script.js') . '?v=' . rand(10, 1000)  }}" defer></script>
 
 </head>
 

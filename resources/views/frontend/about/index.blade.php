@@ -5,7 +5,11 @@
 
 @push('css')
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css">
+<link rel="preload" as="image" href="{{ asset('images/home/hero.webp') }}" />
+
+{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"> --}}
+<link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css') }}">
+
 
 @endpush
 
@@ -13,8 +17,8 @@
 
 @push('js')
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" defer></script>
-
+{{-- <script data-src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" defer></script> --}}
+<script src="{{ asset('js/swiper-bundle.min.js') }}" defer></script>
 @endpush
 
 
