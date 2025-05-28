@@ -391,6 +391,9 @@ window.addEventListener('load', () => {
     if (pageContacts) {
         initMap();
     }
+    if (pageServices) {
+        initCreditServices();
+    }
 
 
 })
@@ -404,7 +407,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     if (pageServices) {
-        initCreditServices();
+        // initCreditServices();
         initAccordionFaq();
         initSliderPosts();
     }
