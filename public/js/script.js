@@ -388,17 +388,10 @@ window.addEventListener('load', () => {
 
     initImageObserver();
 
-    if (pageContacts) {
-        initMap();
-    }
-    if (pageServices) {
-        initCreditServices();
-    }
+    // if (pageContacts) {
+    //     initMap();
+    // }
 
-
-})
-
-window.addEventListener('DOMContentLoaded', () => {
     if (pageHome) {
         initSliderServices();
         initSliderReviews();
@@ -407,7 +400,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     if (pageServices) {
-        // initCreditServices();
+        initCreditServices();
         initAccordionFaq();
         initSliderPosts();
     }
@@ -420,9 +413,40 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     if (pageContacts) {
+        initMap();
         initAccordionFaq();
         initSliderPosts();
     }
+
+
+
+})
+
+window.addEventListener('DOMContentLoaded', () => {
+    // if (pageHome) {
+    //     initSliderServices();
+    //     initSliderReviews();
+    //     initAccordionFaq();
+    //     initSliderPosts();
+    // }
+
+    // if (pageServices) {
+    //     initCreditServices();
+    //     initAccordionFaq();
+    //     initSliderPosts();
+    // }
+
+    // if (pageAbout) {
+    //     initSliderReviews();
+    // }
+    // if (pageBlog) {
+    //     initTopServices();
+    // }
+
+    // if (pageContacts) {
+    //     initAccordionFaq();
+    //     initSliderPosts();
+    // }
 })
 
 function initTopServices() {
