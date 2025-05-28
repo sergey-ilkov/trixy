@@ -388,13 +388,9 @@ window.addEventListener('load', () => {
 
     initImageObserver();
 
-    if (pageContacts) {
-        initMap();
-    }
-
-})
-
-window.addEventListener('DOMContentLoaded', () => {
+    // if (pageContacts) {
+    //     initMap();
+    // }
     if (pageHome) {
         initSliderServices();
         initSliderReviews();
@@ -416,10 +412,16 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     if (pageContacts) {
+        initMap();
         initAccordionFaq();
         initSliderPosts();
     }
+
 })
+
+// window.addEventListener('DOMContentLoaded', () => {
+
+// })
 
 function initTopServices() {
     const divTopServices = document.querySelector('#top-services');
