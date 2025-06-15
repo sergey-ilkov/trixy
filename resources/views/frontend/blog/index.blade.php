@@ -82,13 +82,16 @@
 
                     <div class="blog__item bg-grd-1">
 
-                        <a class="blog__item-link-img" href="{{ route('article', $post->slug) }}">
-                            <picture>
-                                <source media="(max-width: 600px)" srcset="{{ asset('storage/' . $post->image_min ) }}">
-                                <img class="blog__item-img lazy" src="{{ asset('images/loading.png') }}" data-src="{{ asset('storage/' . $post->image ) }}" alt="{{ $post->alt_image }}">
-                            </picture>
+                        <div class="blog__item-wrap">
+                            <a class="blog__item-link-img" href="{{ route('article', $post->slug) }}">
+                                <picture>
+                                    <source media="(max-width: 600px)" srcset="{{ asset('storage/' . $post->image_min ) }}">
+                                    <img class="blog__item-img lazy" src="{{ asset('images/loading.png') }}" data-src="{{ asset('storage/' . $post->image ) }}" alt="{{ $post->alt_image }}">
+                                </picture>
+    
+                            </a>
+                        </div>
 
-                        </a>
 
                         <div class="blog__item-content">
                             <h3 class="blog__item-title">
